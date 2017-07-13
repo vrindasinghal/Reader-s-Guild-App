@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Reader\'sGuild</string>
+    <string name="textview_splash">Reader\'s Guild</string>
+    <string name="textview_login">LOGIN</string>
+</resources>
