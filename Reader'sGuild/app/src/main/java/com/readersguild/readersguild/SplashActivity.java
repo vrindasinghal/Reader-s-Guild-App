@@ -31,7 +31,6 @@ public class SplashActivity extends Activity {
                 // Start your app main activity
                 Intent i = new Intent(SplashActivity.this, AdminUserActivity.class);
                 startActivity(i);
-
                 // close this activity
                 finish();
             }
