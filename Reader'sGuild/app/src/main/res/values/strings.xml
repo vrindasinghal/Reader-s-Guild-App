@@ -2,4 +2,12 @@
     <string name="app_name">Reader\'sGuild</string>
     <string name="textview_splash">Reader\'s Guild</string>
     <string name="textview_login">LOGIN</string>
+    <string name="textview_signup_name">Name</string>
+    <string name="textview_signup_email">E-Mail</string>
+    <string name="textview_signup_mobileno">Mobile Number</string>
+    <string name="textview_signup_password">Password</string>
+    <string name="textview_signup_branch">Branch</string>
+    <string name="textview_signup_year">Year</string>
+    <string name="textview_signup_hostel">Hostel</string>
+    <string name="textview_signup_roomNo">Room No.</string>
 </resources>
