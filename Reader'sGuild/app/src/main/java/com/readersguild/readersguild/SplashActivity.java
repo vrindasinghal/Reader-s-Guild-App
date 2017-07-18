@@ -13,10 +13,19 @@ public class SplashActivity extends Activity {
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 3000;
 
+    //DataBase
+    DataHelpAdminLogin dataHelp;
+    MyOpenHelper myOpenHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        //DB
+        myOpenHelper = new MyOpenHelper(this);
+        dataHelp = new DataHelpAdminLogin(this);
+
+        dataHelp.insertNewRecordInAdminMaster("admin","123");
 
         new Handler().postDelayed(new Runnable() {
 

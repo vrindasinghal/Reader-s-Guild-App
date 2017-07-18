@@ -29,6 +29,8 @@
 
         <activity android:name=".AdminUserActivity"></activity>
 
+        <activity android:name=".AdminMainActivity"></activity>
+
         <activity android:name=".AdminLoginActivity"></activity>
 
         <activity android:name=".TabActivity"></activity>
