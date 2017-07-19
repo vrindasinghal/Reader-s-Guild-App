@@ -13,7 +13,6 @@ import android.util.Log;
 public class DataHelpAdminLogin {
     /* Initialization SQLiteDatabase & create reference variable */
     SQLiteDatabase db;
-
     /* Database open/upgrade helper*/
     SQLiteOpenHelper mhelper;
     MyOpenHelper myhelp;
@@ -21,7 +20,6 @@ public class DataHelpAdminLogin {
      * Context of the application using the database.
      */
     Context context;
-    Cursor c1;
 
     public DataHelpAdminLogin(Context con) {
 
