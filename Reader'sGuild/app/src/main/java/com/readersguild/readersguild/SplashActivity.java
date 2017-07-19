@@ -25,7 +25,7 @@ public class SplashActivity extends Activity {
         myOpenHelper = new MyOpenHelper(this);
         dataHelp = new DataHelpAdminLogin(this);
 
-        dataHelp.insertNewRecordInAdminMaster("admin","123");
+        dataHelp.insertNewRecordInAdminMaster(123,"123");
 
         new Handler().postDelayed(new Runnable() {
 

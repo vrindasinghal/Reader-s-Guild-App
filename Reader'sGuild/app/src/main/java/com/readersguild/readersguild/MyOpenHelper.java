@@ -23,7 +23,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + adminMaster
-                + "(adminID TEXT PRIMARY KEY,admin_password TEXT)");
+                + "(adminID INTEGER PRIMARY KEY,admin_password TEXT)");
 
     }
 
