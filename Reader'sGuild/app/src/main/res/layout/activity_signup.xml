@@ -31,7 +31,6 @@
             android:id="@+id/input_signup_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:hint="Name"
             android:inputType="text"
@@ -47,7 +46,6 @@
             android:id="@+id/input_signup_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:inputType="text"
             android:textColor="#ffffff" />
@@ -62,7 +60,6 @@
             android:id="@+id/input_signup_mNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:inputType="textEmailAddress"
             android:textColor="#ffffff" />
@@ -77,7 +74,6 @@
             android:id="@+id/input_signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:inputType="textPassword"
             android:textColor="#ffffff" />
@@ -92,7 +88,6 @@
             android:id="@+id/input_signup_branch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:inputType="text"
             android:textColor="#ffffff" />
@@ -100,14 +95,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/textview_signup_year"
+            android:text="@string/textview_signup_rollno"
             android:textColor="#ffffff" />
 
         <EditText
-            android:id="@+id/input_signup_year"
+            android:id="@+id/input_signup_rollno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:inputType="text"
             android:textColor="#ffffff" />
@@ -122,7 +116,6 @@
             android:id="@+id/input_signup_hostel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:inputType="text"
             android:textColor="#ffffff" />
@@ -137,7 +130,6 @@
             android:id="@+id/input_signup_room"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:inputType="text"
             android:textColor="#ffffff" />
@@ -146,9 +138,9 @@
             android:id="@+id/btn_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:layout_marginTop="24dp"
-            android:padding="12dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
             android:text="Create Account" />
 
         <TextView android:id="@+id/link_login"

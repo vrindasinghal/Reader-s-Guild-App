@@ -7,18 +7,18 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_marginTop="125dp"
         android:layout_height="72dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="125dp"
         android:src="@drawable/rg_icon" />
 
     <Button
         android:id="@+id/button_admin"
-        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:text="ADMIN" />
 
     <Button

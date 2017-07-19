@@ -15,15 +15,15 @@ public class AdminMainActivity extends AppCompatActivity {
 
     GridView grid;
     String[] web = {"Add Book","Open Book Issue Form","List of Alloted Books","Remove Book","List of Contributors of Books",
-            "Reurn Book"};
+            "Return Book"};
     int[] imageId = {
 
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher_round,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher_round,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher_round,
+            R.drawable.rg_add_book,
+            R.drawable.rg_book_issue_form,
+            R.drawable.rg_alloted_books,
+            R.drawable.rg_remove_book,
+            R.drawable.rg_book_contributors,
+            R.drawable.rg_return_book,
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
