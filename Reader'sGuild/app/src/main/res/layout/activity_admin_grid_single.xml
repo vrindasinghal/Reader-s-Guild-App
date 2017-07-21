@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="5dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
 
     <ImageView
         android:id="@+id/grid_image"
         android:layout_width="75dp"
-        android:layout_height="75dp">
-    </ImageView>
+        android:layout_height="75dp"
+        android:layout_marginLeft="15dp"></ImageView>
 
     <TextView
         android:id="@+id/grid_text"
@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:textColor="#ffffff"
-        android:textSize="15sp" >
-    </TextView>
+        android:textSize="15sp"></TextView>
 
 </LinearLayout>

@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:orientation="vertical"
     android:background="#000000"
+    android:orientation="vertical"
     tools:context=".AdminMainActivity">
 
     <ImageView
@@ -18,10 +18,10 @@
         android:id="@+id/grid"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center"
         android:layout_marginLeft="15dp"
-        android:numColumns="auto_fit"
         android:columnWidth="100dp"
+        android:gravity="center"
+        android:numColumns="auto_fit"
         android:stretchMode="columnWidth" />
 
 </LinearLayout>

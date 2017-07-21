@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:textColor="#ffffff" />
 
         <TextView
@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
-            android:inputType="textEmailAddress"
+            android:inputType="number"
             android:textColor="#ffffff" />
 
         <TextView
@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="#ffffff" />
 
         <TextView

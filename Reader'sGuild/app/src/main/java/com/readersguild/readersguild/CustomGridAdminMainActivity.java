@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Created by vrinda on 19-07-2017.
  */
 
-public class CustomGridAdminMainActivity extends BaseAdapter{
+public class CustomGridAdminMainActivity extends BaseAdapter {
     private Context mContext;
     private final String[] web;
     private final int[] Imageid;
@@ -45,6 +45,7 @@ public class CustomGridAdminMainActivity extends BaseAdapter{
         View grid;
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
 
         if (convertView == null) {
 

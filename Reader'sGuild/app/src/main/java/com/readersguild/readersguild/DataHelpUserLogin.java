@@ -25,7 +25,7 @@ public class DataHelpUserLogin {
         this.db = mhelper.getWritableDatabase();
     }
 
-    public Integer insertNewRecordInUserMaster(Integer uMobileNo ,String uName,String uEmail, String uPassword,String uBranch,Integer uRollNo,String uHostel,String uRoomNo) {
+    public Integer insertNewRecordInUserMaster(Long uMobileNo, String uName, String uEmail, String uPassword, String uBranch, Long uRollNo, String uHostel, String uRoomNo) {
         try {
             ContentValues conV = new ContentValues();
             conV.put("user_mobileNo", uMobileNo);
@@ -33,7 +33,7 @@ public class DataHelpUserLogin {
             conV.put("user_email", uEmail);
             conV.put("user_password", uPassword);
             conV.put("user_branch", uBranch);
-            conV.put("user_rollno",uRollNo );
+            conV.put("user_rollno", uRollNo);
             conV.put("user_hostel", uHostel);
             conV.put("user_roomNo", uRoomNo);
             db.insert(MyOpenHelper.userMaster, null, conV);

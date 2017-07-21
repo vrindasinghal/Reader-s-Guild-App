@@ -36,6 +36,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/editText_bookId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -53,6 +54,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/editText_bookName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -70,6 +72,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/editText_contributorsName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -87,6 +90,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/editText_contributorsMobileNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

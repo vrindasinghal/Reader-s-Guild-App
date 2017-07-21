@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:paddingBottom="20dp"
+    android:background="#000000"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:id="@+id/textView_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="Book Name"
+        android:textColor="#FFF4FF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_bId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:text="Book Id"
+        android:textColor="#F70D1A"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
