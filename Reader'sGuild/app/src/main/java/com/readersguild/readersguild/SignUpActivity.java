@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static java.lang.Long.parseLong;
+
 /**
  * Created by vrinda on 19-07-2017.
  */
@@ -19,7 +21,8 @@ public class SignUpActivity extends AppCompatActivity {
     private Button signup_button;
     private EditText editTextName, editTextEmail, editTextMobileNumber, editTextPassword, editTextBranch, editTextRollNo, editTextHostel, editTextRoom;
 
-    private Long uMobNo,uRollNo;
+    private int uMobNo;
+    private Long uRollNo;
 
     DataHelpUserLogin dataHelp;
 
@@ -43,9 +46,9 @@ public class SignUpActivity extends AppCompatActivity {
         signup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uMobNo = Long.parseLong(editTextMobileNumber.getText().toString());
-                uRollNo = Long.parseLong(editTextRollNo.getText().toString());
-                Integer isUserInserted = dataHelp.insertNewRecordInUserMaster(uMobNo, editTextName.getText().toString(), editTextEmail.getText().toString(), editTextPassword.getText().toString(), editTextPassword.getText().toString(), uRollNo, editTextHostel.getText().toString(), editTextRoom.getText().toString());
+                uMobNo = Integer.parseInt(editTextMobileNumber.getText().toString());
+                uRollNo = parseLong(editTextRollNo.getText().toString());
+                Integer isUserInserted = dataHelp.insertNewRecordInUserMaster(uMobNo, editTextName.getText().toString(), editTextEmail.getText().toString(), editTextPassword.getText().toString(), editTextBranch.getText().toString(), uRollNo, editTextHostel.getText().toString(), editTextRoom.getText().toString());
                 if (isUserInserted == 1) {
                     Toast.makeText(SignUpActivity.this, "User Inserted Into DataBase", Toast.LENGTH_SHORT).show();
                 } else {

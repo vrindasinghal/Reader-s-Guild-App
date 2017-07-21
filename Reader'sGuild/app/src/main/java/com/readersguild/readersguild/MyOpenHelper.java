@@ -27,7 +27,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 + "(adminID INTEGER PRIMARY KEY,admin_password TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + userMaster
-                + "(user_mobileNo BIGINT PRIMARY KEY,user_name TEXT,user_email TEXT,user_password TEXT,user_branch TEXT, user_rollno BIGINT, user_hostel TEXT,user_roomNo TEXT)");
+                + "(user_mobileNo INTEGER PRIMARY KEY,user_name TEXT,user_email TEXT,user_password TEXT,user_branch TEXT, user_rollno BIGINT, user_hostel TEXT,user_roomNo TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + bookMaster
                 + "(bookId INTEGER PRIMARY KEY,book_name TEXT,contributors_name TEXT,contributors_mobile_no BIGINT)");

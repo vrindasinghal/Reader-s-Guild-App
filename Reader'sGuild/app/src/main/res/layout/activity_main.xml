@@ -16,25 +16,25 @@
         android:src="@drawable/rg_icon" />
 
     <TextView
-        android:id="@+id/textview_email"
+        android:id="@+id/textview_mobile_number"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:fontFamily="casual"
         android:gravity="center"
-        android:text="E-mail"
+        android:text="Mobile Number"
         android:textColor="#ffffff"
         android:textSize="16dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/input_email"
+        android:id="@+id/input_mobile_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:textColor="#ffffff" />
 
     <TextView

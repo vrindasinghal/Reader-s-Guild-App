@@ -5,24 +5,42 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button b1;
     private TextView signup_link;
+    DataHelpUserLogin dataHelpUserLogin;
+    private EditText editTextUserMobNo, editTextUserPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dataHelpUserLogin = new DataHelpUserLogin(this);
 
+        editTextUserMobNo = (EditText) findViewById(R.id.input_mobile_number);
+        editTextUserPassword = (EditText) findViewById(R.id.input_password);
         b1 = (Button) findViewById(R.id.btn_login);
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TabActivity.class);
-                startActivity(intent);
+               /* if (editTextUserMobNo.getText().toString().equals("")) {
+                    Toast.makeText(MainActivity.this, "Please Enter Mobile Number", Toast.LENGTH_SHORT).show();
+                } else if (editTextUserPassword.getText().toString().equals("")) {
+                    Toast.makeText(MainActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+                } else {
+                    Long convertMobNo = Long.parseLong(editTextUserMobNo.getText().toString());
+                    if (dataHelpUserLogin.isUserValid(convertMobNo, editTextUserPassword.getText().toString())) {*/
+                        Intent intent = new Intent(MainActivity.this, TabActivity.class);
+                        startActivity(intent);
+                    /*} else {
+                        Toast.makeText(MainActivity.this, "Sorry!! Invalid user", Toast.LENGTH_SHORT).show();
+                    }
+                }*/
             }
         });
 

@@ -15,7 +15,6 @@ import android.widget.Toast;
 public class AdminLoginActivity extends AppCompatActivity {
 
     DataHelpAdminLogin dataHelp;
-    MyOpenHelper myOpenHelper;
     private Button b1;
     private EditText e1, e2;
 
