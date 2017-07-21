@@ -41,6 +41,9 @@ public class AdminMainActivity extends AppCompatActivity {
                 if (i == 0) {
                     Intent intent = new Intent(AdminMainActivity.this, AddBookActivity.class);
                     startActivity(intent);
+                } else if (i == 3) {
+                    Intent intent = new Intent(AdminMainActivity.this, RemoveBookActivity.class);
+                    startActivity(intent);
                 }
             }
         });

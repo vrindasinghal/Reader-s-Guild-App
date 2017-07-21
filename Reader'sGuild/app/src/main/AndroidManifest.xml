@@ -33,6 +33,8 @@
 
         <activity android:name=".AdminUserActivity"></activity>
 
+        <activity android:name=".RemoveBookActivity"></activity>
+
         <activity android:name=".SignUpActivity"></activity>
 
         <activity android:name=".AdminMainActivity"></activity>

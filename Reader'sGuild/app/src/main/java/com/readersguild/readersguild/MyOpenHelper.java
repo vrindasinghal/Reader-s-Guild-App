@@ -16,6 +16,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     public static final String adminMaster = "adminTable";
     public static final String userMaster = "userTable";
     public static final String bookMaster = "bookTable";
+    public static final String loginLogout = "loginLogoutStatus";
 
     public MyOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -31,6 +32,9 @@ public class MyOpenHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + bookMaster
                 + "(bookId INTEGER PRIMARY KEY,book_name TEXT,contributors_name TEXT,contributors_mobile_no BIGINT)");
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + loginLogout
+                + "(loggedIn INTEGER PRIMARY KEY,loggedOut INTEGER)");
     }
 
     @Override
