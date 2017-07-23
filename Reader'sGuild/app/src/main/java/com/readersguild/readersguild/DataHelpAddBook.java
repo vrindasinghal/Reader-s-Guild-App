@@ -57,5 +57,17 @@ public class DataHelpAddBook {
             return null;
         }
     }
+
+    public int deleteBookFromDatabase(Integer bookId) {
+        try {
+
+            db.delete(MyOpenHelper.bookMaster, "bookId=" + bookId, null);
+            return 1;
+        } catch (Exception e) {
+            Log.e("Error At", " " + e);
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }
 

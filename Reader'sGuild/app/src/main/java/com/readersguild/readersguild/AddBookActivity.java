@@ -42,7 +42,6 @@ public class AddBookActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(AddBookActivity.this, "Book Insertion failed", Toast.LENGTH_LONG).show();
                 }
-
             }
         });
     }
