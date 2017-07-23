@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by vrinda on 21-07-2017.
+ * Created by vrinda on 22-07-2017.
  */
 
 public class CustomAdapter extends ArrayAdapter {
@@ -24,15 +24,17 @@ public class CustomAdapter extends ArrayAdapter {
     int layout;
     int i;
 
-    public CustomAdapter(@NonNull Context context, @LayoutRes int resource,
-                         ArrayList<String> getName, ArrayList<Integer> getId) {
-        super(context, resource, getName);
 
+    public CustomAdapter(@NonNull Context context, @LayoutRes int resource, ArrayList<String> getBookNames,
+                         ArrayList<Integer> getBookId) {
+        super(context, resource, getBookNames);
 
         this.con = context;
-        this.arrayListBookName = getName;
-        this.arrayListBookId = getId;
+        this.arrayListBookName = getBookNames;
+        this.arrayListBookId = getBookId;
         this.layout = resource;
+
+
     }
 
     @NonNull
@@ -44,17 +46,20 @@ public class CustomAdapter extends ArrayAdapter {
 
         View rowView = inflter.inflate(layout, parent, false);
 
-        TextView textViewName = (TextView) rowView
+        TextView textViewBookName = (TextView) rowView
                 .findViewById(R.id.textView_Name);
 
-        TextView textViewBId = (TextView) rowView
+        TextView bookId = (TextView) rowView
                 .findViewById(R.id.textView_bId);
 
-        String getNameFromArraylist = arrayListBookName.get(position).toString();
-        textViewName.setText(getNameFromArraylist);
-        Integer getId = arrayListBookId.get(position);
-        textViewBId.setText(getId);
+        String getBookNameFromArraylist = arrayListBookName.get(position).toString();
+        textViewBookName.setText(getBookNameFromArraylist);
+        Integer getBookId = arrayListBookId.get(position);
+        bookId.setText("" + getBookId);
         return rowView;
     }
+
+
 }
+
 

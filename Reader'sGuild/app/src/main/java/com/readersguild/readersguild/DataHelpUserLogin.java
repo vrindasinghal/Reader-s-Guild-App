@@ -45,7 +45,8 @@ public class DataHelpUserLogin {
 
     public boolean isUserValid(Long uMobNo, String uPassword) {
         try {
-            Cursor c = db.rawQuery("SELECT  * FROM " + MyOpenHelper.userMaster + " WHERE user_mobileNo = "
+
+            Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.userMaster + " WHERE user_mobileNo = "
                     + uMobNo + " AND user_password = " + uPassword, null);
             if (c.moveToFirst()) {
                 Log.v("TAG", "Congrats Valid User");

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,19 +29,19 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* if (editTextUserMobNo.getText().toString().equals("")) {
+                if (editTextUserMobNo.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Please Enter Mobile Number", Toast.LENGTH_SHORT).show();
                 } else if (editTextUserPassword.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
                 } else {
                     Long convertMobNo = Long.parseLong(editTextUserMobNo.getText().toString());
-                    if (dataHelpUserLogin.isUserValid(convertMobNo, editTextUserPassword.getText().toString())) {*/
+                    if (dataHelpUserLogin.isUserValid(convertMobNo, editTextUserPassword.getText().toString())) {
                         Intent intent = new Intent(MainActivity.this, TabActivity.class);
                         startActivity(intent);
-                    /*} else {
+                    } else {
                         Toast.makeText(MainActivity.this, "Sorry!! Invalid user", Toast.LENGTH_SHORT).show();
                     }
-                }*/
+                }
             }
         });
 
