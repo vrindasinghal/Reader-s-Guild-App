@@ -43,11 +43,10 @@ public class DataHelpUserLogin {
         }
     }
 
-    public boolean isUserValid(Long uMobNo, String uPassword) {
+    public boolean isUserValid(Integer uMobNo, String uPassword) {
         try {
-
-            Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.userMaster + " WHERE user_mobileNo = "
-                    + uMobNo + " AND user_password = " + uPassword, null);
+            Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.userMaster + " WHERE user_mobileNo ='"
+                    + uMobNo + "'" + " AND user_password ='" + uPassword + "'", null);
             if (c.moveToFirst()) {
                 Log.v("TAG", "Congrats Valid User");
                 return true;
@@ -61,5 +60,49 @@ public class DataHelpUserLogin {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public Integer insertRecordInLoginLogut(String mobileNo, Integer i) {
+        try {
+            ContentValues conV = new ContentValues();
+            conV.put("mobile_no", mobileNo);
+            conV.put("isLoggedIn", i);
+            db.insert(MyOpenHelper.loginLogout, null, conV);
+            return 1;
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+
+    //CHANGES
+    public Cursor getRecordFromLoginLogout() {
+        Cursor c;
+        try {
+            c = db.rawQuery("select * from  " + MyOpenHelper.loginLogout, null);
+            return c;
+        } catch (Exception e) {
+            Log.e("Error At", " " + e);
+            e.printStackTrace();
+            // TODO: handle exception
+            return null;
+        }
+    }
+
+    public Cursor getMobileNumber() {
+        try {
+            Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.userMaster, null);
+            return c;
+        } catch (Exception e) {
+            // TODO: handle exception
+            Log.v("In Exception", "Handle Exception");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    public Integer updateLoginLogout() {
+        return 1;
     }
 }

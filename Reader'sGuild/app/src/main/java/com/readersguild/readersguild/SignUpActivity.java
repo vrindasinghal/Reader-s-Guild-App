@@ -48,7 +48,11 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 uMobNo = Integer.parseInt(editTextMobileNumber.getText().toString());
                 uRollNo = parseLong(editTextRollNo.getText().toString());
-                Integer isUserInserted = dataHelp.insertNewRecordInUserMaster(uMobNo, editTextName.getText().toString(), editTextEmail.getText().toString(), editTextPassword.getText().toString(), editTextBranch.getText().toString(), uRollNo, editTextHostel.getText().toString(), editTextRoom.getText().toString());
+                Integer isUserInserted = dataHelp.insertNewRecordInUserMaster(uMobNo, editTextName.getText().toString(),
+                        editTextEmail.getText().toString(),
+                        editTextPassword.getText().toString().trim(),
+                        editTextBranch.getText().toString(), uRollNo,
+                        editTextHostel.getText().toString(), editTextRoom.getText().toString());
                 if (isUserInserted == 1) {
                     Toast.makeText(SignUpActivity.this, "User Inserted Into DataBase", Toast.LENGTH_SHORT).show();
                 } else {

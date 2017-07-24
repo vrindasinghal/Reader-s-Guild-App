@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,7 +33,7 @@ public class Tab2 extends Fragment {
         myOpenHelper = new MyOpenHelper(getActivity());
         dataHelpAddBook = new DataHelpAddBook(getActivity());
         arrayListBookName = new ArrayList<>();
-       // View hiddenInfo = inflater.inflate(R.layout.activity_custom_list_view, null);
+        // View hiddenInfo = inflater.inflate(R.layout.activity_custom_list_view, null);
 
         arrayListBookName = new ArrayList<String>();
         arrayListBookId = new ArrayList<Integer>();
@@ -64,7 +63,6 @@ public class Tab2 extends Fragment {
                 //Toast.makeText(getActivity(), "NOT NULL", Toast.LENGTH_LONG).show()
 
                 do {
-
                     Integer BookId = c1.getInt(0);
                     String bookName = c1.getString(1);
                     arrayListBookId.add(BookId);
@@ -73,9 +71,6 @@ public class Tab2 extends Fragment {
                     Log.v("slipDate", "" + bookName);
 
                 } while (c1.moveToNext());
-
-            } else {
-                Toast.makeText(getActivity(), "DataBase NULL CANE SLIP", Toast.LENGTH_LONG).show();
 
             }
 

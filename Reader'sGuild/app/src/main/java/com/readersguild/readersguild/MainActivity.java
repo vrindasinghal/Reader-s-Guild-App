@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button b1;
     private TextView signup_link;
+    Integer i = 1;
     DataHelpUserLogin dataHelpUserLogin;
     private EditText editTextUserMobNo, editTextUserPassword;
 
@@ -34,10 +35,22 @@ public class MainActivity extends AppCompatActivity {
                 } else if (editTextUserPassword.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
                 } else {
-                    Long convertMobNo = Long.parseLong(editTextUserMobNo.getText().toString());
-                    if (dataHelpUserLogin.isUserValid(convertMobNo, editTextUserPassword.getText().toString())) {
+                    Integer convertMobNo = Integer.parseInt(editTextUserMobNo.getText().toString().trim());
+                    if (dataHelpUserLogin.isUserValid(convertMobNo, editTextUserPassword.getText().toString().trim())) {
                         Intent intent = new Intent(MainActivity.this, TabActivity.class);
                         startActivity(intent);
+
+
+
+                        //CHANGES
+                        /*int isInserted = dataHelpUserLogin.insertRecordInLoginLogut("9999999999", i);
+                        if (isInserted == 1) {
+
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "Sorry!! Something Wrong", Toast.LENGTH_SHORT).show();
+                        }*/
+
                     } else {
                         Toast.makeText(MainActivity.this, "Sorry!! Invalid user", Toast.LENGTH_SHORT).show();
                     }
