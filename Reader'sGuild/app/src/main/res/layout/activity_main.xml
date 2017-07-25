@@ -22,13 +22,13 @@
         android:layout_marginBottom="5dp"
         android:fontFamily="casual"
         android:gravity="center"
-        android:text="Mobile Number"
+        android:text="Roll Number"
         android:textColor="#ffffff"
         android:textSize="16dp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/input_mobile_number"
+        android:id="@+id/input_roll_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"

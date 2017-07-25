@@ -31,13 +31,13 @@ public class DataHelpAddBook {
         this.db = mhelper.getWritableDatabase();
     }
 
-    public Integer insertNewBookInBookMaster(Integer bookId, String bookName, String contributorsName, Long contributorsMobileNo) {
+    public Integer insertNewBookInBookMaster(Integer bookId, String bookName, String contributorsName, Integer contributorsRollNo) {
         try {
             ContentValues conV = new ContentValues();
             conV.put("bookId", bookId);
             conV.put("book_name", bookName);
             conV.put("contributors_name", contributorsName);
-            conV.put("contributors_mobile_no", contributorsMobileNo);
+            conV.put("contributors_roll_no", contributorsRollNo);
             db.insert(MyOpenHelper.bookMaster, null, conV);
             return 1;
         } catch (Exception e) {

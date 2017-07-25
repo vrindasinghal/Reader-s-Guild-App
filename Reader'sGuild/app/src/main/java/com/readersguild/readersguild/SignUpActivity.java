@@ -9,8 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static java.lang.Long.parseLong;
-
 /**
  * Created by vrinda on 19-07-2017.
  */
@@ -21,8 +19,7 @@ public class SignUpActivity extends AppCompatActivity {
     private Button signup_button;
     private EditText editTextName, editTextEmail, editTextMobileNumber, editTextPassword, editTextBranch, editTextRollNo, editTextHostel, editTextRoom;
 
-    private int uMobNo;
-    private Long uRollNo;
+    private int uMobNo,uRollNo;
 
     DataHelpUserLogin dataHelp;
 
@@ -47,7 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 uMobNo = Integer.parseInt(editTextMobileNumber.getText().toString());
-                uRollNo = parseLong(editTextRollNo.getText().toString());
+                uRollNo = Integer.parseInt(editTextRollNo.getText().toString());
                 Integer isUserInserted = dataHelp.insertNewRecordInUserMaster(uMobNo, editTextName.getText().toString(),
                         editTextEmail.getText().toString(),
                         editTextPassword.getText().toString().trim(),

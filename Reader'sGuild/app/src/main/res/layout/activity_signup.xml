@@ -24,8 +24,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:text="Please Sign Up to Continue"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:text="@string/textview_signup_name"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/input_signup_name"
@@ -39,64 +52,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/textview_signup_email"
-            android:textColor="#ffffff" />
-
-        <EditText
-            android:id="@+id/input_signup_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:inputType="textEmailAddress"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/textview_signup_mobileno"
-            android:textColor="#ffffff" />
-
-        <EditText
-            android:id="@+id/input_signup_mNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:inputType="number"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/textview_signup_password"
-            android:textColor="#ffffff" />
-
-        <EditText
-            android:id="@+id/input_signup_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:inputType="textPassword"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/textview_signup_branch"
-            android:textColor="#ffffff" />
-
-        <EditText
-            android:id="@+id/input_signup_branch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:inputType="text"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:text="@string/textview_signup_rollno"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/input_signup_rollno"
@@ -109,8 +68,74 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/textview_signup_hostel"
+            android:fontFamily="casual"
+            android:text="@string/textview_signup_email"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_signup_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:inputType="textEmailAddress"
             android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/textview_signup_mobileno"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_signup_mNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:inputType="number"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/textview_signup_password"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_signup_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:inputType="textPassword"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/textview_signup_branch"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_signup_branch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:inputType="text"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/textview_signup_hostel"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/input_signup_hostel"
@@ -123,8 +148,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
             android:text="@string/textview_signup_roomNo"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/input_signup_room"
@@ -143,14 +170,15 @@
             android:padding="8dp"
             android:text="Create Account" />
 
-        <TextView android:id="@+id/link_login"
+        <TextView
+            android:id="@+id/link_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="Already a member? Login"
             android:gravity="center"
+            android:text="Already a member? Login"
             android:textColor="#ffffff"
-            android:textSize="16dip"/>
+            android:textSize="16dip" />
 
     </LinearLayout>
 

@@ -28,13 +28,13 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 + "(adminID INTEGER PRIMARY KEY,admin_password TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + userMaster
-                + "(user_mobileNo INTEGER PRIMARY KEY,user_name TEXT,user_email TEXT,user_password TEXT,user_branch TEXT, user_rollno INTEGER, user_hostel TEXT,user_roomNo TEXT)");
+                + "(user_rollno INTEGER PRIMARY KEY,user_name TEXT,user_email TEXT,user_password TEXT,user_branch TEXT, user_mobileNo INTEGER, user_hostel TEXT,user_roomNo TEXT)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + bookMaster
-                + "(bookId INTEGER PRIMARY KEY,book_name TEXT,contributors_name TEXT,contributors_mobile_no BIGINT)");
+                + "(bookId INTEGER PRIMARY KEY,book_name TEXT,contributors_name TEXT,contributors_roll_no INTEGER)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + loginLogout
-                + "(mobile_no INTEGER PRIMARY KEY,isLoggedIn INTEGER)");
+                + "(roll_no INTEGER PRIMARY KEY,isLoggedIn INTEGER)");
     }
 
     @Override

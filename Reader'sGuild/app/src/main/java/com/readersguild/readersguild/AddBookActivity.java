@@ -14,9 +14,9 @@ import android.widget.Toast;
 public class AddBookActivity extends AppCompatActivity {
 
     private Button addBook;
-    private EditText editTextBookId, bookName, contributorsName, contributorsMobileNo;
+    private EditText editTextBookId, bookName, contributorsName, contributorsRollNo;
     private Integer bookID;
-    private Long cMobNo;
+    private Integer cRollNo;
 
     DataHelpAddBook DataHelp;
 
@@ -29,14 +29,14 @@ public class AddBookActivity extends AppCompatActivity {
         editTextBookId = (EditText) findViewById(R.id.editText_bookId);
         bookName = (EditText) findViewById(R.id.editText_bookName);
         contributorsName = (EditText) findViewById(R.id.editText_contributorsName);
-        contributorsMobileNo = (EditText) findViewById(R.id.editText_contributorsMobileNo);
+        contributorsRollNo = (EditText) findViewById(R.id.editText_contributorsRollNo);
         addBook = (Button) findViewById(R.id.btn_addBook);
         addBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 bookID = Integer.parseInt(editTextBookId.getText().toString());
-                cMobNo = Long.parseLong(contributorsMobileNo.getText().toString());
-                int isInserted = DataHelp.insertNewBookInBookMaster(bookID, bookName.getText().toString(), contributorsName.getText().toString(), cMobNo);
+                cRollNo = Integer.parseInt(contributorsRollNo.getText().toString());
+                int isInserted = DataHelp.insertNewBookInBookMaster(bookID, bookName.getText().toString(), contributorsName.getText().toString(), cRollNo);
                 if (isInserted == 1) {
                     Toast.makeText(AddBookActivity.this, "Book Added Successfully", Toast.LENGTH_LONG).show();
                 } else {

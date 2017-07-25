@@ -20,7 +20,7 @@ import android.view.ViewGroup;
 public class Tab1 extends Fragment {
 
     private DataHelpUserLogin dataHelpUserLogin;
-    private Long USER_MOBILE_NUMBER;
+    private Integer USER_ROLL_NUMBER;
 
     @Nullable
     @Override
@@ -46,50 +46,36 @@ public class Tab1 extends Fragment {
         }*/
         switch (item.getItemId()) {
             case R.id.logout_menu:
-                Intent intent = new Intent(getActivity(), AdminUserActivity.class);
-                startActivity(intent);
-                return true;
+                if (dataHelpUserLogin.getStatus(USER_ROLL_NUMBER)) {
+                    Intent intent = new Intent(getActivity(), AdminUserActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
         }
         return onOptionsItemSelected(item);
     }
 
     public void getRecordsFromDatabase() {
-
         Cursor c1;
-
-        /** tryCatch block for GetAll Records from database & set to arrayList **/
-
         try {
-
             /**** OPEN OR CREATE DATABASE *****/
             dataHelpUserLogin.db = getActivity().openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, 0, null);
-
             /** THIS METHOD IS USED TO GET ALL RECORDS FROM DB */
-            c1 = dataHelpUserLogin.getMobileNumber();
+            c1 = dataHelpUserLogin.getRollNumber();
             /** check if returned cursor not null **/
-
-            if (c1.moveToFirst())
-
-            {
-
+            if (c1.moveToFirst()) {
                 Log.v("Message in C1", "Not Null");
-
                 do {
                     //int a = c1.getColumnCount();
-                    USER_MOBILE_NUMBER = c1.getLong(0);
-                    Log.v("UserMobileNumber", "" + USER_MOBILE_NUMBER);
+                    USER_ROLL_NUMBER = c1.getInt(0);
+                    Log.v("UserRollNumber", "" + USER_ROLL_NUMBER);
 
                 } while (c1.moveToNext());
             }
-
             //dh.db.close();
-
         } catch (Exception e) { // TODO: handle exception
             e.printStackTrace();
 
         }
-
     }
-
-
 }

@@ -13,9 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button b1;
     private TextView signup_link;
-    Integer i = 1;
     DataHelpUserLogin dataHelpUserLogin;
-    private EditText editTextUserMobNo, editTextUserPassword;
+    private EditText editTextUserRollNo, editTextUserPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,41 +22,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         dataHelpUserLogin = new DataHelpUserLogin(this);
 
-        editTextUserMobNo = (EditText) findViewById(R.id.input_mobile_number);
+        editTextUserRollNo = (EditText) findViewById(R.id.input_roll_number);
         editTextUserPassword = (EditText) findViewById(R.id.input_password);
         b1 = (Button) findViewById(R.id.btn_login);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (editTextUserMobNo.getText().toString().equals("")) {
-                    Toast.makeText(MainActivity.this, "Please Enter Mobile Number", Toast.LENGTH_SHORT).show();
+                if (editTextUserRollNo.getText().toString().equals("")) {
+                    Toast.makeText(MainActivity.this, "Please Enter Roll Number", Toast.LENGTH_SHORT).show();
                 } else if (editTextUserPassword.getText().toString().equals("")) {
                     Toast.makeText(MainActivity.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
                 } else {
-                    Integer convertMobNo = Integer.parseInt(editTextUserMobNo.getText().toString().trim());
-                    if (dataHelpUserLogin.isUserValid(convertMobNo, editTextUserPassword.getText().toString().trim())) {
-                        Intent intent = new Intent(MainActivity.this, TabActivity.class);
-                        startActivity(intent);
-
-
-
+                    Integer convertRollNo = Integer.parseInt(editTextUserRollNo.getText().toString().trim());
+                    if (dataHelpUserLogin.isUserValid(convertRollNo, editTextUserPassword.getText().toString().trim())) {
                         //CHANGES
-                        /*int isInserted = dataHelpUserLogin.insertRecordInLoginLogut("9999999999", i);
+                        int isInserted = dataHelpUserLogin.insertRecordInLoginLogut(convertRollNo, 1);
                         if (isInserted == 1) {
-
-
+                            Intent intent = new Intent(MainActivity.this, TabActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(MainActivity.this, "Sorry!! Something Wrong", Toast.LENGTH_SHORT).show();
-                        }*/
-
+                        }
                     } else {
                         Toast.makeText(MainActivity.this, "Sorry!! Invalid user", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
-
         signup_link = (TextView) findViewById(R.id.link_signup);
         signup_link.setOnClickListener(new View.OnClickListener() {
             @Override

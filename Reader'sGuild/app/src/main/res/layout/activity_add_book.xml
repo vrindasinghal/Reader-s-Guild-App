@@ -84,13 +84,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:fontFamily="casual"
-        android:text="Enter Book's Contributor's Mobile No."
+        android:text="Enter Book's Contributor's Roll No."
         android:textColor="#ffffff"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editText_contributorsMobileNo"
+        android:id="@+id/editText_contributorsRollNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

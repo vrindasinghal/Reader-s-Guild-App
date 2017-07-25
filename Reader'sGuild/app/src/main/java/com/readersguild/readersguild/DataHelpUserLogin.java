@@ -25,7 +25,7 @@ public class DataHelpUserLogin {
         this.db = mhelper.getWritableDatabase();
     }
 
-    public Integer insertNewRecordInUserMaster(Integer uMobileNo, String uName, String uEmail, String uPassword, String uBranch, Long uRollNo, String uHostel, String uRoomNo) {
+    public Integer insertNewRecordInUserMaster(Integer uMobileNo, String uName, String uEmail, String uPassword, String uBranch, Integer uRollNo, String uHostel, String uRoomNo) {
         try {
             ContentValues conV = new ContentValues();
             conV.put("user_mobileNo", uMobileNo);
@@ -43,10 +43,10 @@ public class DataHelpUserLogin {
         }
     }
 
-    public boolean isUserValid(Integer uMobNo, String uPassword) {
+    public boolean isUserValid(Integer uRollNo, String uPassword) {
         try {
-            Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.userMaster + " WHERE user_mobileNo ='"
-                    + uMobNo + "'" + " AND user_password ='" + uPassword + "'", null);
+            Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.userMaster + " WHERE user_rollno ='"
+                    + uRollNo + "'" + " AND user_password ='" + uPassword + "'", null);
             if (c.moveToFirst()) {
                 Log.v("TAG", "Congrats Valid User");
                 return true;
@@ -62,10 +62,10 @@ public class DataHelpUserLogin {
         }
     }
 
-    public Integer insertRecordInLoginLogut(String mobileNo, Integer i) {
+    public Integer insertRecordInLoginLogut(Integer rollNo, Integer i) {
         try {
             ContentValues conV = new ContentValues();
-            conV.put("mobile_no", mobileNo);
+            conV.put("roll_no", rollNo);
             conV.put("isLoggedIn", i);
             db.insert(MyOpenHelper.loginLogout, null, conV);
             return 1;
@@ -79,7 +79,7 @@ public class DataHelpUserLogin {
     public Cursor getRecordFromLoginLogout() {
         Cursor c;
         try {
-            c = db.rawQuery("select * from  " + MyOpenHelper.loginLogout, null);
+            c = db.rawQuery("SELECT * FROM  " + MyOpenHelper.loginLogout, null);
             return c;
         } catch (Exception e) {
             Log.e("Error At", " " + e);
@@ -89,7 +89,7 @@ public class DataHelpUserLogin {
         }
     }
 
-    public Cursor getMobileNumber() {
+    public Cursor getRollNumber() {
         try {
             Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.userMaster, null);
             return c;
@@ -101,8 +101,23 @@ public class DataHelpUserLogin {
         }
     }
 
+    public boolean getStatus(Integer rollNo){
+        try {
+            Cursor c = db.rawQuery("SELECT * FROM " + MyOpenHelper.loginLogout + " WHERE roll_no ='"
+                    + rollNo + "'" + " AND isLoggedIn ='" + ""+1 + "'", null);
+            if (c.moveToFirst()) {
+                Log.v("TAG", "Congrats Valid User");
+                return true;
+            } else {
+                Log.v("TAG", "Invalid User");
+                return false;
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+            Log.v("In Exception", "Handle Exception");
+            e.printStackTrace();
+            return false;
+        }
 
-    public Integer updateLoginLogout() {
-        return 1;
     }
 }
