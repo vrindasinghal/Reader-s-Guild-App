@@ -37,9 +37,11 @@ public class AdminMainActivity extends AppCompatActivity {
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Toast.makeText(AdminMainActivity.this, "You Clicked at " + web[+i], Toast.LENGTH_SHORT).show();
                 if (i == 0) {
                     Intent intent = new Intent(AdminMainActivity.this, AddBookActivity.class);
+                    startActivity(intent);
+                } else if (i == 1) {
+                    Intent intent = new Intent(AdminMainActivity.this, BookIssueMainActivity.class);
                     startActivity(intent);
                 } else if (i == 3) {
                     Intent intent = new Intent(AdminMainActivity.this, RemoveBookActivity.class);
