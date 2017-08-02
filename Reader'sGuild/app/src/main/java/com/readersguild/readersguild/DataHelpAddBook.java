@@ -31,13 +31,18 @@ public class DataHelpAddBook {
         this.db = mhelper.getWritableDatabase();
     }
 
-    public Integer insertNewBookInBookMaster(Integer bookId, String bookName, String contributorsName, Integer contributorsRollNo) {
+    public Integer insertNewBookInBookMaster(Integer bookId, String bookName, String contributorsName, Integer contributorsRollNo,Integer issuersRollNo,
+                                             Integer issued,Integer returned, Integer reIssued) {
         try {
             ContentValues conV = new ContentValues();
             conV.put("bookId", bookId);
             conV.put("book_name", bookName);
             conV.put("contributors_name", contributorsName);
             conV.put("contributors_roll_no", contributorsRollNo);
+            conV.put("issuers_roll_no",issuersRollNo);
+            conV.put("isIssued",issued);
+            conV.put("isReturned",returned);
+            conV.put("isReIssued",reIssued);
             db.insert(MyOpenHelper.bookMaster, null, conV);
             return 1;
         } catch (Exception e) {
@@ -66,6 +71,18 @@ public class DataHelpAddBook {
         } catch (Exception e) {
             Log.e("Error At", " " + e);
             e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public Integer insertIntoOpenClose(Integer isOpen,Integer isClose) {
+        try {
+            ContentValues conV = new ContentValues();
+            conV.put("openBookIssue",isOpen);
+            conV.put("closeBookIssue",isClose);
+            db.insert(MyOpenHelper.openClose, null, conV);
+            return 1;
+        } catch (Exception e) {
             return 0;
         }
     }

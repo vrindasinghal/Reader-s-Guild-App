@@ -15,8 +15,7 @@ public class AddBookActivity extends AppCompatActivity {
 
     private Button addBook;
     private EditText editTextBookId, bookName, contributorsName, contributorsRollNo;
-    private Integer bookID;
-    private Integer cRollNo;
+    private Integer bookID,cRollNo,iRollNo=0,issued=0,returned=1,reIssued=0;
 
     DataHelpAddBook DataHelp;
 
@@ -36,7 +35,7 @@ public class AddBookActivity extends AppCompatActivity {
             public void onClick(View view) {
                 bookID = Integer.parseInt(editTextBookId.getText().toString());
                 cRollNo = Integer.parseInt(contributorsRollNo.getText().toString());
-                int isInserted = DataHelp.insertNewBookInBookMaster(bookID, bookName.getText().toString(), contributorsName.getText().toString(), cRollNo);
+                int isInserted = DataHelp.insertNewBookInBookMaster(bookID, bookName.getText().toString(), contributorsName.getText().toString(), cRollNo,iRollNo,issued,returned,reIssued);
                 if (isInserted == 1) {
                     Toast.makeText(AddBookActivity.this, "Book Added Successfully", Toast.LENGTH_LONG).show();
                 } else {
