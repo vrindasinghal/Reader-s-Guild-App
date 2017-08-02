@@ -38,7 +38,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
                 + "(roll_no INTEGER PRIMARY KEY,isLoggedIn INTEGER)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + openClose
-                + "(openBookIssue INTEGER PRIMARY KEY,closeBookIssue INTEGER)");
+                + "(openCloseId INTEGER PRIMARY KEY,openBookIssue INTEGER,closeBookIssue INTEGER)");
     }
 
     @Override

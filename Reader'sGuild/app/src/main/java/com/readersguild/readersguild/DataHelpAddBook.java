@@ -75,15 +75,44 @@ public class DataHelpAddBook {
         }
     }
 
-    public Integer insertIntoOpenClose(Integer isOpen,Integer isClose) {
+    public Integer insertIntoOpenClose(Integer id,Integer isOpen,Integer isClose) {
         try {
             ContentValues conV = new ContentValues();
+            conV.put("openCloseId",id);
             conV.put("openBookIssue",isOpen);
             conV.put("closeBookIssue",isClose);
             db.insert(MyOpenHelper.openClose, null, conV);
             return 1;
         } catch (Exception e) {
             return 0;
+        }
+    }
+
+    public Integer updateOpenClose(Integer Id,Integer open,Integer close){
+        try {
+            ContentValues conV = new ContentValues();
+            conV.put("openBookIssue",open);
+            db.update(MyOpenHelper.openClose, conV, "openCloseId='" + Id + "'", null);
+            conV.put("closeBookIssue",close);
+            db.update(MyOpenHelper.openClose, conV, "openCloseId='" + Id + "'", null);
+            Log.v("DataHelp", "Updated OpenClose Successfully");
+            return 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Cursor getBookIssueFormRecords() {
+        Cursor c;
+        try {
+            c = db.rawQuery("select * from  " + MyOpenHelper.openClose, null);
+            return c;
+        } catch (Exception e) {
+            Log.e("Error At", " " + e);
+            e.printStackTrace();
+            // TODO: handle exception
+            return null;
         }
     }
 }

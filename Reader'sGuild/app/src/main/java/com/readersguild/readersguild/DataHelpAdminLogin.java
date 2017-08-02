@@ -44,8 +44,6 @@ public class DataHelpAdminLogin {
 
 
     public boolean isAdminValid(Integer adminId, String adminPassword) {
-
-
         try {
 
             Cursor c = db.rawQuery("SELECT  * FROM " + MyOpenHelper.adminMaster + " WHERE adminID = "

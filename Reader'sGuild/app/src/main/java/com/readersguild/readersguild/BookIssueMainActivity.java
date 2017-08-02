@@ -22,12 +22,14 @@ public class BookIssueMainActivity extends AppCompatActivity {
 
         dataHelpAddBook = new DataHelpAddBook(this);
 
+        dataHelpAddBook.insertIntoOpenClose(zero,zero,zero);
+
         link_open = (TextView) findViewById(R.id.textView_open);
         link_open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int isInserted = dataHelpAddBook.insertIntoOpenClose(one, zero);
-                if (isInserted == 1) {
+                int isUpdated = dataHelpAddBook.updateOpenClose(zero,one,zero);
+                if (isUpdated == 1) {
                     Toast.makeText(BookIssueMainActivity.this, "Book Issue Form Is Now Open", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(BookIssueMainActivity.this, "Unable to Open Book Issue Form", Toast.LENGTH_SHORT).show();
@@ -39,8 +41,8 @@ public class BookIssueMainActivity extends AppCompatActivity {
         link_close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int isInserted = dataHelpAddBook.insertIntoOpenClose(zero,one);
-                if (isInserted == 1) {
+                int isUpdated = dataHelpAddBook.updateOpenClose(zero,zero,one);
+                if (isUpdated == 1) {
                     Toast.makeText(BookIssueMainActivity.this, "Book Issue Form Is Now Closed", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(BookIssueMainActivity.this, "Unable to Close Book Issue Form", Toast.LENGTH_SHORT).show();

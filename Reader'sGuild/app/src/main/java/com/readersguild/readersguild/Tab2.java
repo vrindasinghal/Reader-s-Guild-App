@@ -17,8 +17,6 @@ import java.util.ArrayList;
  */
 
 public class Tab2 extends Fragment {
-
-
     DataHelpAddBook dataHelpAddBook;
     MyOpenHelper myOpenHelper;
     private ArrayList<String> arrayListBookName;
@@ -33,35 +31,25 @@ public class Tab2 extends Fragment {
         myOpenHelper = new MyOpenHelper(getActivity());
         dataHelpAddBook = new DataHelpAddBook(getActivity());
         arrayListBookName = new ArrayList<>();
-        // View hiddenInfo = inflater.inflate(R.layout.activity_custom_list_view, null);
-
         arrayListBookName = new ArrayList<String>();
         arrayListBookId = new ArrayList<Integer>();
+
         getBookDetails();
+
         CustomAdapter adapter = new CustomAdapter(getActivity(), R.layout.activity_custom_list_view, arrayListBookName, arrayListBookId);
         listView.setAdapter(adapter);
         return rootView;
-
     }
-
 
     private void getBookDetails() {
         Cursor c1;
         try {
-
-
-/**** OPEN OR CREATE DATABASE *****/
-
+            /**** OPEN OR CREATE DATABASE *****/
             dataHelpAddBook.db = getActivity().openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, 0, null);
-
-/** THIS METHOD IS USED TO GET ALL RECORDS FROM DB */
-
+            /** THIS METHOD IS USED TO GET ALL RECORDS FROM DB */
             c1 = dataHelpAddBook.getBookRecords();
-
             if (c1.moveToFirst()) {
                 Log.v("Message in C1", "Not Null");
-                //Toast.makeText(getActivity(), "NOT NULL", Toast.LENGTH_LONG).show()
-
                 do {
                     Integer BookId = c1.getInt(0);
                     String bookName = c1.getString(1);
@@ -71,18 +59,10 @@ public class Tab2 extends Fragment {
                     Log.v("slipDate", "" + bookName);
 
                 } while (c1.moveToNext());
-
             }
-
-
-            //dh.db.close();
-
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
-
         }
     }
-
-
 }

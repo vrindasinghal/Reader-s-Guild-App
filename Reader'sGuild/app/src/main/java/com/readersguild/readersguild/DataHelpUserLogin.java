@@ -74,8 +74,6 @@ public class DataHelpUserLogin {
         }
     }
 
-
-    //CHANGES
     public Cursor getRecordFromLoginLogout() {
         Cursor c;
         try {
@@ -118,6 +116,5 @@ public class DataHelpUserLogin {
             e.printStackTrace();
             return false;
         }
-
     }
 }
