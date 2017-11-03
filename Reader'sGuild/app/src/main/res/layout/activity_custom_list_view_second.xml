@@ -36,7 +36,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView_contributers_name"
+        android:id="@+id/textView_contributors_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -44,24 +44,24 @@
         android:layout_marginRight="5dp"
         android:fontFamily="casual"
         android:paddingRight="10dp"
-        android:text="Contributer's Name"
+        android:text="Contributor's Name"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView_contributers_roll_number"
+        android:id="@+id/textView_contributors_roll_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView_contributers_name"
+        android:layout_below="@+id/textView_contributors_name"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
         android:fontFamily="casual"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Contributer's Roll No."
+        android:text="Contributor's Roll No."
         android:textColor="#F70D1A"
         android:textSize="12sp"
         android:textStyle="bold" />

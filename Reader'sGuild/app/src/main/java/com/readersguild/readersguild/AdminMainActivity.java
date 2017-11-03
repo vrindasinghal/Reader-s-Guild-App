@@ -43,8 +43,17 @@ public class AdminMainActivity extends AppCompatActivity {
                 } else if (i == 1) {
                     Intent intent = new Intent(AdminMainActivity.this, BookIssueMainActivity.class);
                     startActivity(intent);
+                } else if (i == 2) {
+                    Intent intent = new Intent(AdminMainActivity.this, AllottedBookListActivity.class);
+                    startActivity(intent);
                 } else if (i == 3) {
                     Intent intent = new Intent(AdminMainActivity.this, RemoveBookActivity.class);
+                    startActivity(intent);
+                } else if (i == 4) {
+                    Intent intent = new Intent(AdminMainActivity.this, ContributorsListActivity.class);
+                    startActivity(intent);
+                } else if (i == 5) {
+                    Intent intent = new Intent(AdminMainActivity.this, ReturnBookActivity.class);
                     startActivity(intent);
                 }
             }

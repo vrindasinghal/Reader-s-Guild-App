@@ -37,18 +37,14 @@ public class Tab1 extends Fragment {
         return;
     }
 
-
-    //CHANGES
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }*/
         switch (item.getItemId()) {
             case R.id.logout_menu:
                 if (dataHelpUserLogin.getStatus(USER_ROLL_NUMBER)) {
                     Intent intent = new Intent(getActivity(), AdminUserActivity.class);
                     startActivity(intent);
+                    dataHelpUserLogin.updateStatus(USER_ROLL_NUMBER);
                     return true;
                 }
         }
@@ -69,13 +65,11 @@ public class Tab1 extends Fragment {
                     //int a = c1.getColumnCount();
                     USER_ROLL_NUMBER = c1.getInt(0);
                     Log.v("UserRollNumber", "" + USER_ROLL_NUMBER);
-
                 } while (c1.moveToNext());
             }
             //dh.db.close();
         } catch (Exception e) { // TODO: handle exception
             e.printStackTrace();
-
         }
     }
 }

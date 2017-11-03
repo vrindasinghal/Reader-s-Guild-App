@@ -30,7 +30,7 @@ public class Tab2 extends Fragment {
 
         myOpenHelper = new MyOpenHelper(getActivity());
         dataHelpAddBook = new DataHelpAddBook(getActivity());
-        arrayListBookName = new ArrayList<>();
+        //arrayListBookName = new ArrayList<>();
         arrayListBookName = new ArrayList<String>();
         arrayListBookId = new ArrayList<Integer>();
 

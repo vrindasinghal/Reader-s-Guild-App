@@ -17,7 +17,7 @@ public class DataHelpAddBook {
     /* Database open/upgrade helper*/
     SQLiteOpenHelper mhelper;
     MyOpenHelper myhelp;
-    /**
+    /*
      * Context of the application using the database.
      */
     Context context;
@@ -31,18 +31,18 @@ public class DataHelpAddBook {
         this.db = mhelper.getWritableDatabase();
     }
 
-    public Integer insertNewBookInBookMaster(Integer bookId, String bookName, String contributorsName, Integer contributorsRollNo,Integer issuersRollNo,
-                                             Integer issued,Integer returned, Integer reIssued) {
+    public Integer insertNewBookInBookMaster(Integer bookId, String bookName, String contributorsName, Integer contributorsRollNo, Integer issuersRollNo,
+                                             Integer issued, Integer returned, Integer reIssued) {
         try {
             ContentValues conV = new ContentValues();
             conV.put("bookId", bookId);
             conV.put("book_name", bookName);
             conV.put("contributors_name", contributorsName);
             conV.put("contributors_roll_no", contributorsRollNo);
-            conV.put("issuers_roll_no",issuersRollNo);
-            conV.put("isIssued",issued);
-            conV.put("isReturned",returned);
-            conV.put("isReIssued",reIssued);
+            conV.put("issuers_roll_no", issuersRollNo);
+            conV.put("isIssued", issued);
+            conV.put("isReturned", returned);
+            conV.put("isReIssued", reIssued);
             db.insert(MyOpenHelper.bookMaster, null, conV);
             return 1;
         } catch (Exception e) {
@@ -65,7 +65,6 @@ public class DataHelpAddBook {
 
     public int deleteBookFromDatabase(Integer bookId) {
         try {
-
             db.delete(MyOpenHelper.bookMaster, "bookId=" + bookId, null);
             return 1;
         } catch (Exception e) {
@@ -75,12 +74,12 @@ public class DataHelpAddBook {
         }
     }
 
-    public Integer insertIntoOpenClose(Integer id,Integer isOpen,Integer isClose) {
+    public Integer insertIntoOpenClose(Integer id, Integer isOpen, Integer isClose) {
         try {
             ContentValues conV = new ContentValues();
-            conV.put("openCloseId",id);
-            conV.put("openBookIssue",isOpen);
-            conV.put("closeBookIssue",isClose);
+            conV.put("openCloseId", id);
+            conV.put("openBookIssue", isOpen);
+            conV.put("closeBookIssue", isClose);
             db.insert(MyOpenHelper.openClose, null, conV);
             return 1;
         } catch (Exception e) {
@@ -88,16 +87,34 @@ public class DataHelpAddBook {
         }
     }
 
-    public Integer updateOpenClose(Integer Id,Integer open,Integer close){
+    public Integer updateOpenClose(Integer Id, Integer open, Integer close) {
         try {
             ContentValues conV = new ContentValues();
-            conV.put("openBookIssue",open);
+            conV.put("openBookIssue", open);
             db.update(MyOpenHelper.openClose, conV, "openCloseId='" + Id + "'", null);
-            conV.put("closeBookIssue",close);
+            conV.put("closeBookIssue", close);
             db.update(MyOpenHelper.openClose, conV, "openCloseId='" + Id + "'", null);
             Log.v("DataHelp", "Updated OpenClose Successfully");
             return 1;
         } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Integer updateReturnedBookStatus(Integer id) {
+        Integer one = 1, zero = 0;
+        try {
+            ContentValues conV = new ContentValues();
+            conV.put("isIssued", zero);
+            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'",null);
+            conV.put("isReturned",one);
+            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'",null);
+            conV.put("isReIssued", zero);
+            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'",null);
+            return 1;
+        }
+        catch (Exception e){
             e.printStackTrace();
             return null;
         }

@@ -21,18 +21,18 @@ public class AdminUserActivity extends Activity {
         button1 = (Button) findViewById(R.id.button_admin);
         button2 = (Button) findViewById(R.id.button_user);
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AdminUserActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AdminUserActivity.this, AdminLoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminUserActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

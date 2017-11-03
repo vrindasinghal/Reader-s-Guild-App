@@ -13,19 +13,31 @@
         android:layout_marginTop="125dp"
         android:src="@drawable/rg_icon" />
 
-    <Button
-        android:id="@+id/button_admin"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="ADMIN" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/button_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="USER" />
+        <Button
+            android:id="@+id/button_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp"
+            android:fontFamily="casual"
+            android:text="ADMIN" />
+
+        <Button
+            android:id="@+id/button_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="casual"
+            android:text="USER" />
+    </LinearLayout>
+
 
 </LinearLayout>

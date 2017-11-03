@@ -20,32 +20,30 @@ public class CustomAdapterSecond extends ArrayAdapter {
     Context con;
     private ArrayList<String> arrayListBookName;
     private ArrayList<Integer> arrayListBookId;
-    private ArrayList<String> arrayListContributersName;
-    private ArrayList<Integer> arrayListContributersRollNumber;
+    private ArrayList<String> arrayListContributorsName;
+    private ArrayList<Integer> arrayListContributorsRollNumber;
     int layout;
 
     public CustomAdapterSecond(@NonNull Context context, @LayoutRes int resource, ArrayList<String> getBookNames,
-                               ArrayList<Integer> getBookId, ArrayList<String> getContributersName,ArrayList<Integer> getContributersRollNumber) {
+                               ArrayList<Integer> getBookId, ArrayList<String> getContributorsName, ArrayList<Integer> getContributorsRollNumber) {
         super(context, resource, getBookNames);
 
         this.con = context;
         this.arrayListBookName = getBookNames;
         this.arrayListBookId = getBookId;
-        this.arrayListContributersName = getContributersName;
-        this.arrayListContributersRollNumber=getContributersRollNumber;
+        this.arrayListContributorsName = getContributorsName;
+        this.arrayListContributorsRollNumber = getContributorsRollNumber;
         this.layout = resource;
-
-
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        LayoutInflater inflter = (LayoutInflater) con
+        LayoutInflater inflater = (LayoutInflater) con
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflter.inflate(layout, parent, false);
+        View rowView = inflater.inflate(layout, parent, false);
 
         TextView textViewBookName = (TextView) rowView
                 .findViewById(R.id.textView_Name);
@@ -53,22 +51,22 @@ public class CustomAdapterSecond extends ArrayAdapter {
         TextView bookId = (TextView) rowView
                 .findViewById(R.id.textView_bId);
 
-        TextView textViewContributersName = (TextView) rowView
-                .findViewById(R.id.textView_contributers_name);
+        TextView textViewContributorsName = (TextView) rowView
+                .findViewById(R.id.textView_contributors_name);
 
         TextView rollNumber = (TextView) rowView
-                .findViewById(R.id.textView_contributers_roll_number);
+                .findViewById(R.id.textView_contributors_roll_number);
 
-        String getBookNameFromArraylist = arrayListBookName.get(position).toString();
-        textViewBookName.setText(getBookNameFromArraylist);
+        String getBookNameFromArrayList = arrayListBookName.get(position).toString();
+        textViewBookName.setText(getBookNameFromArrayList);
 
         Integer getBookId = arrayListBookId.get(position);
         bookId.setText("" + getBookId);
 
-        String getContributersNameFromArrayList=arrayListContributersName.get(position).toString();
-        textViewContributersName.setText(getContributersNameFromArrayList);
+        String getContributorsNameFromArrayList = arrayListContributorsName.get(position).toString();
+        textViewContributorsName.setText(getContributorsNameFromArrayList);
 
-        Integer getRollNumber = arrayListContributersRollNumber.get(position);
+        Integer getRollNumber = arrayListContributorsRollNumber.get(position);
         rollNumber.setText("" + getRollNumber);
 
         return rowView;

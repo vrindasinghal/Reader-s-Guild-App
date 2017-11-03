@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
  */
 
 public class TabActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
-    //This is our tablayout
+    //This is our tabLayout
     private TabLayout tabLayout;
 
     //This is our viewPager
@@ -26,13 +26,13 @@ public class TabActivity extends AppCompatActivity implements TabLayout.OnTabSel
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Initializing the tablayout
+        //Initializing the tabLayout
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
         //Adding the tabs using addTab() method
-        tabLayout.addTab(tabLayout.newTab().setText("Tab1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab3"));
+        tabLayout.addTab(tabLayout.newTab().setText("About"));
+        tabLayout.addTab(tabLayout.newTab().setText("All Books"));
+        tabLayout.addTab(tabLayout.newTab().setText("Available Books"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         //Initializing viewPager
@@ -50,7 +50,6 @@ public class TabActivity extends AppCompatActivity implements TabLayout.OnTabSel
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
         viewPager.setCurrentItem(tab.getPosition());
-
     }
 
     @Override

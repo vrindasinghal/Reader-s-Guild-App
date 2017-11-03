@@ -21,8 +21,9 @@
         android:layout_marginBottom="10dp"
         android:padding="10dp"
         android:text="ADD BOOK"
+        android:fontFamily="casual"
         android:textColor="#ffffff"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <TextView
@@ -102,6 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:fontFamily="casual"
         android:layout_marginTop="10dp"
         android:text="Add Book" />
 

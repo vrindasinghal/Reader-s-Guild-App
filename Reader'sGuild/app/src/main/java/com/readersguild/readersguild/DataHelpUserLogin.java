@@ -117,4 +117,15 @@ public class DataHelpUserLogin {
             return false;
         }
     }
+
+    public void updateStatus(Integer rollNo){
+        try {
+            ContentValues conV = new ContentValues();
+            conV.put("isLoggedIn",""+0);
+            db.update(MyOpenHelper.loginLogout, conV, "roll_no='" + rollNo + "'", null);
+            Log.v("TAG", "Updated Status Successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

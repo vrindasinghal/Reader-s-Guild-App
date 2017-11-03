@@ -41,8 +41,6 @@ public class SplashActivity extends Activity {
         }, SPLASH_TIME_OUT);
     }
 
-
-    //CHANGES
     private void getRecordLoginLogout() {
         try {
             Log.v("TAG", "In getRecordLoginLogout");
@@ -84,7 +82,6 @@ public class SplashActivity extends Activity {
             }
         } catch (Exception e) {
             e.printStackTrace();
-
         }
     }
 }

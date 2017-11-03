@@ -44,6 +44,12 @@
         <activity android:name=".AdminLoginActivity"></activity>
 
         <activity android:name=".TabActivity"></activity>
+
+        <activity android:name=".AllottedBookListActivity"></activity>
+
+        <activity android:name=".ContributorsListActivity"></activity>
+
+        <activity android:name=".ReturnBookActivity"></activity>
     </application>
 
 </manifest>
