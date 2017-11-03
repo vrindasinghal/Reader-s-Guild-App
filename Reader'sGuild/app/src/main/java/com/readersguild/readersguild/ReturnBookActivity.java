@@ -32,12 +32,16 @@ public class ReturnBookActivity extends AppCompatActivity {
         btnReturnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toReturnBookId = Integer.parseInt(editTextToReturnBookId.getText().toString());
-                int isReturned = dataHelpReturnBook.updateReturnedBookStatus(toReturnBookId);
-                if (isReturned == 1) {
-                    Toast.makeText(ReturnBookActivity.this, "Book Returned Successfully", Toast.LENGTH_SHORT).show();
+                if (editTextToReturnBookId.getText().toString().equals("")) {
+                    Toast.makeText(ReturnBookActivity.this, "Book ID cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(ReturnBookActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    toReturnBookId = Integer.parseInt(editTextToReturnBookId.getText().toString());
+                    int isReturned = dataHelpReturnBook.updateReturnedBookStatus(toReturnBookId);
+                    if (isReturned == 1) {
+                        Toast.makeText(ReturnBookActivity.this, "Book Returned Successfully", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(ReturnBookActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

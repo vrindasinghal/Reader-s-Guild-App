@@ -37,18 +37,14 @@ public class Tab3 extends Fragment {
         arrayListBookName = new ArrayList<String>();
         arrayListBookId = new ArrayList<Integer>();
 
-        getAvailableBooks();
-
-        CustomAdapter adapter = new CustomAdapter(getActivity(), R.layout.activity_custom_list_view, arrayListBookName, arrayListBookId);
-        listView.setAdapter(adapter);
-
         getIssueFormState();
         if (open == 1 && close == 0) {
-            //todo
-            Toast.makeText(Tab3.this.getActivity(), "Open State", Toast.LENGTH_SHORT).show();
+            getAvailableBooks();
+            CustomAdapter adapter = new CustomAdapter(getActivity(), R.layout.activity_custom_list_view, arrayListBookName, arrayListBookId);
+            listView.setAdapter(adapter);
+            //Toast.makeText(Tab3.this.getActivity(), "Open State", Toast.LENGTH_SHORT).show();
         } else if (open == 0 && close == 1) {
-            //todo
-            Toast.makeText(Tab3.this.getActivity(), "Closed State", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Tab3.this.getActivity(), "Book issue form is closed", Toast.LENGTH_SHORT).show();
         }
         return rootView1;
     }

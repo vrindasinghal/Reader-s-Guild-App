@@ -30,12 +30,16 @@ public class RemoveBookActivity extends AppCompatActivity {
         removeBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bookID = Integer.parseInt(bookIdToBeRemoved.getText().toString());
-                int isDeleted = dataHelpRemoveBook.deleteBookFromDatabase(bookID);
-                if (isDeleted == 1) {
-                    Toast.makeText(RemoveBookActivity.this, "Book Removed Successfully", Toast.LENGTH_SHORT).show();
+                if (bookIdToBeRemoved.getText().toString().equals("")) {
+                    Toast.makeText(RemoveBookActivity.this, "Book ID cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(RemoveBookActivity.this, "Book removal failed", Toast.LENGTH_SHORT).show();
+                    bookID = Integer.parseInt(bookIdToBeRemoved.getText().toString());
+                    int isDeleted = dataHelpRemoveBook.deleteBookFromDatabase(bookID);
+                    if (isDeleted == 1) {
+                        Toast.makeText(RemoveBookActivity.this, "Book Removed Successfully", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(RemoveBookActivity.this, "Book removal failed", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

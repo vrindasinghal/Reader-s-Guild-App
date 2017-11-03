@@ -63,14 +63,14 @@ public class DataHelpAddBook {
         }
     }
 
-    public int deleteBookFromDatabase(Integer bookId) {
+    public Integer deleteBookFromDatabase(Integer bookId) {
         try {
             db.delete(MyOpenHelper.bookMaster, "bookId=" + bookId, null);
             return 1;
         } catch (Exception e) {
             Log.e("Error At", " " + e);
             e.printStackTrace();
-            return 0;
+            return null;
         }
     }
 
@@ -107,14 +107,13 @@ public class DataHelpAddBook {
         try {
             ContentValues conV = new ContentValues();
             conV.put("isIssued", zero);
-            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'",null);
-            conV.put("isReturned",one);
-            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'",null);
+            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'", null);
+            conV.put("isReturned", one);
+            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'", null);
             conV.put("isReIssued", zero);
-            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'",null);
+            db.update(MyOpenHelper.bookMaster, conV, "bookId='" + id + "'", null);
             return 1;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }

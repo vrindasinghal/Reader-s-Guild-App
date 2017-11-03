@@ -44,23 +44,6 @@
         android:inputType="number"
         android:textColor="#ffffff" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="casual"
-        android:text="Enter Book Name"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editText_bookName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:inputType="text"
-        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/btn_removeBook"
